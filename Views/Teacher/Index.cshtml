@@ -1,0 +1,141 @@
+﻿@{
+    ViewData["Title"] = "اضافه کردن اساتید";
+    ViewData["TSOstad"] = "اضافه کردن اساتید";
+    ViewData["TTCode"] = "کد ملی";
+    ViewData["TTMobile"] = "شماره تماس";
+    ViewData["TTTeach"] = "حوزه تدریس";
+    ViewData["TSName"] = "نام";
+    ViewData["TSFamily"] = "نام خانوادگی";
+    ViewData["ok"] = "ثبت";
+    ViewData["close"] = "بستن";
+    ViewData["Edit"] = "ویرایش";
+    ViewData["Delete"] = "حذف";
+    ViewData["operator"] = "عملیات";
+    ViewData["TS"] = "ویرایش استاد";
+    ViewData["save"] = "ذخیره";
+}
+<div class="text-center">
+
+    <button type="button" class="btn btn-primary fs-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+        ثبت اساتید
+    </button>
+    <!-- modal teacher-->
+    <div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-2" id="staticBackdropLabel">@ViewData["TSOstad"]</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="d-flex flex-column row  g-3 needs-validation" novalidate method="post">
+                        <div class="col-md-4 position-relative insideForm">
+                            <label for="validationTooltip01" class="form-label">@ViewData["TSName"]:</label>
+                            <input type="text" class="form-control" id="validationTooltip01" required>
+                        </div>
+                        <div class="col-md-4 position-relative insideForm">
+                            <label for="validationTooltip02" class="form-label">@ViewData["TSFamily"]:</label>
+                            <input type="text" class="form-control" id="validationTooltip02" required>
+                        </div>
+                        <div class="col-md-4 position-relative insideForm">
+                            <label for="validationTooltipUsername" class="form-label">@ViewData["TTCode"]:</label>
+                            <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                        </div>
+                        <div class="col-md-6 position-relative insideForm">
+                            <label for="validationTooltip03" class="form-label">@ViewData["TTMobile"]:</label>
+                            <input type="text" class="form-control" id="validationTooltip03" required>
+                        </div>
+                        <div class="col-md-3 position-relative insideForm">
+                            <label for="validationTooltip05" class="form-label">@ViewData["TTTeach"]:</label>
+                            <input type="text" class="form-control" id="validationTooltip05" required>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary fs-3" data-bs-dismiss="modal">@ViewData["close"]</button>
+                    <button type="button" href="Index" class="btn btn-primary fs-3">@ViewData["ok"]</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- teacher data-->
+    <div class="table-responsive mt-5">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">@ViewData["TSName"]</th>
+                    <th scope="col">@ViewData["TSFamily"] </th>
+                    <th scope="col">@ViewData["TTCode"] </th>
+                    <th scope="col">@ViewData["TTMobile"] </th>
+                    <th scope="col">@ViewData["TTTeach"] </th>
+                    <th scope="col">@ViewData["operator"] </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>name</td>
+                    <td>family</td>
+                    <td>code meli</td>
+                    <td>mobile</td>
+                    <td>hozeh techer</td>
+                    <td>
+                        <a data-bs-target="#exampleModal" data-bs-toggle="modal" class="btn btn-primary btn-sm">@ViewData["Edit"]</a>
+                        <a class="btn btn-danger btn-sm">@ViewData["Delete"]</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>name</td>
+                    <td>family</td>
+                    <td>code meli</td>
+                    <td>mobile</td>
+                    <td>hozeh techer</td>
+                    <td>
+                        <a data-bs-target="#exampleModal" data-bs-toggle="modal" class="btn btn-primary btn-sm">@ViewData["Edit"]</a>
+                        <a class="btn btn-danger btn-sm">@ViewData["Delete"]</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">@ViewData["TS"]</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- value pass nadadam-->
+                    <form class="d-flex flex-column row  g-3 needs-validation" novalidate method="post">
+                        <div class="col-md-4 position-relative insideForm">
+                            <label for="validationTooltip01" class="form-label">@ViewData["TSName"]:</label>
+                            <input type="text" class="form-control" id="validationTooltip01" required>
+                        </div>
+                        <div class="col-md-4 position-relative insideForm">
+                            <label for="validationTooltip02" class="form-label">@ViewData["TSFamily"]:</label>
+                            <input type="text" class="form-control" id="validationTooltip02" required>
+                        </div>
+                        <div class="col-md-4 position-relative insideForm">
+                            <label for="validationTooltipUsername" class="form-label">@ViewData["TTCode"]:</label>
+                            <input type="text" class="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend" required>
+                        </div>
+                        <div class="col-md-6 position-relative insideForm">
+                            <label for="validationTooltip03" class="form-label">@ViewData["TTMobile"]:</label>
+                            <input type="text" class="form-control" id="validationTooltip03" required>
+                        </div>
+                        <div class="col-md-3 position-relative insideForm">
+                            <label for="validationTooltip05" class="form-label">@ViewData["TTTeach"]:</label>
+                            <input type="text" class="form-control" id="validationTooltip05" required>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">@ViewData["save"]</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
